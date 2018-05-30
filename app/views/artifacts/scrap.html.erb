@@ -1,0 +1,24 @@
+<h1><%= @artifact["objectID"] %></h1>
+<h1><%= @artifact["titles"]["primaryTitle"]%></h1>
+
+	<img src="<%= @artifact["media"]["images"]["primaryImage"]["imageUrl"] %>">
+
+	<img src="<%= @artifact["media"]["images"]["primaryImage"]["webImageUrl"] %>">
+
+<h1><%= @artifact["media"]["images"]["altText"] %></h1>
+<div class="plyr plyr--audio plyr--ready plyr--stopped">
+	<audio>
+		<source type="audio/mp3" src="<%= @artifact["media"]["audios"][0]["url"] %>">
+</audio>
+</div>
+
+
+
+<!-- <h1>artifact["metadata"]["metaKeywords"]</h1> -->
+
+
+<h1><%= @artifact["facetInfo"]["geographicLocations"][2]["name"] %></h1>
+<h1><%= @artifact["facetInfo"]["dateEra"][0]["name"] %></h1>
+
+<h1><%= @artifact["onlineResources"]["toahTimelines"][0]["url"] %></h1>
+
