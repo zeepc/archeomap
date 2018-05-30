@@ -5,11 +5,11 @@ class ArtifactsController < ApplicationController
 	end
 
 	def  show
-	@artifact= Artifact.find(params[:id])	
+	@artifact = Artifact.find(params[:id])	
 	end
 
 	def new
-		@artifact= Artifact.new
+		@artifact = Artifact.new
 	end
 
 	def create
@@ -18,18 +18,14 @@ class ArtifactsController < ApplicationController
 	end
 
 	def edit
-		@artifact= Artifact.find(params[:id])	
+		@artifact = Artifact.find(params[:id])	
 	end
 
 	def update
-		@artifact= Artifact.find(params[:id])	
+		@artifact = Artifact.find(params[:id])	
 		@artifact.update(artifact_params)
 		redirect_to '/artifacts/new'
 	end
-
-
-
-
 
 	private
     # Using a private method to encapsulate the permissible parameters is
