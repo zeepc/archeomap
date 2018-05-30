@@ -1,0 +1,22 @@
+
+<%= form_for @artifact, url: test_path, html: { multipart: true }  do |f| %>  
+    <%= f.label :objectID %>  
+    <%= f.text_field :objectID, value: @artifact.objectID %>  
+    <%= f.label :title%>  
+    <%= f.text_field :title, value: @artifact.title %>
+    <%= f.label :alt_title %>  
+    <%= f.text_field :alt_title, value: @artifact.alt_title  %>
+    <%= f.label :pic_sm_url %>  
+    <%= f.text_field :pic_sm_url, value: @artifact.pic_sm_url  %>
+    <%= f.label :pic_lg_url %>  
+    <%= f.text_field :pic_lg_url, value: @artifact.pic_lg_url  %>
+    <%= f.label :audio %>  
+    <%= f.text_field :audio, value: @artifact.audio %>
+    <%= f.label :location %>  
+    <%= f.text_field :location, value: @artifact.location  %>
+    <%= f.label :era %> 
+    <%= f.file_field :era, value: @artifact.era  %>
+    <%= f.label :timeline_url %> 
+    <%= f.file_field :timeline_url, value: @artifact.timeline_url  %>
+    <%= f.submit %>
+<% end %>
