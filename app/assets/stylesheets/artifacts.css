@@ -14,3 +14,29 @@
         margin: 0;
         padding: 0;
       }
+
+.row {
+  position: absolute;;
+  left: 5%;
+}
+.artifact{
+  position: relative;
+  margin-right: 1%;
+  margin-bottom: 3%;
+  margin-left: 1%;
+}
+
+.modal {
+  color: #fff;
+  position: absolute;
+  left: 15%;
+  top: 5%;
+  background: #d6d7dc5e;
+  height:550px;
+  width: 990px;
+}
+
+.modal-header{
+  background-color: #ffffffb8;
+  color: #646773;
+}
