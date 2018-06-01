@@ -2,6 +2,7 @@ class ArtifactsController < ApplicationController
 
 	def index
 		@artifact = Artifact.all
+		@arti = Artifact.where(params[:location])
 	end
 
 	def  show
