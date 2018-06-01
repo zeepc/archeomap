@@ -1,23 +1,27 @@
 
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 86%;
-        width: 80%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
     <div id="map"></div>
+
+  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-header">
+      <h4 class="modal-title text-uppercase text-center"></h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+     </button>
+  </div>
+<div class="modal-body">
+  <div class="container-fluid">
+    <div class="row">
+      <% Artifact.all.each do |art| %>
+      <div class="card" style="width: 23rem;">
+        <a href="/artifacts"><img class="card-img-top" src="<%= art.pic_sm_url %>" alt="Card image cap"></a>
+   </div>
+   <% end %>
+  </div>
+</div>
+</div>
+</div>
+
+
     <script>
       function initMap() {
 
@@ -135,8 +139,17 @@
               }
             ],
             {name: 'Styled Map'});
+        
 
-        //Variable for Marker locations
+  // Create variable that will contain all of the data from my DB table Artifacts. This is to be passes to a modal.
+      var cityData = [
+      <% Artifact.all.each do |art| %>
+        ['<%= art.location %>','<%= art.pic_sm_url %>'],
+      <% end %>
+      ]
+      console.log(cityData)
+
+  //Variable for Marker locations
 
         var city = [
         	['Babylon', 32.507975, 44.388925],
@@ -151,6 +164,8 @@
         	['Girsu',31.6167, 46.1500]
         ];
 
+        console.log("IAM IN CITTTTTTTTTTTTTYYYYYYYYYYYYYYYYY")
+
 
       	var map = new google.maps.Map(document.getElementById('map'), {
       		center: new google.maps.LatLng(32.507975,44.388925),
@@ -159,32 +174,34 @@
           mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain','styled_map']
         }
       });
-
+      	// var markers = []
         // Loop through city array and get title, lat and long.
         for (i=0; i < city.length; i++){
         	var center = new google.maps.LatLng(city[i][1],city[i][2]);
 				 	// Creates Marker on a specific location in the "position".
-					 var marker = new google.maps.Marker({
+					var marker = new google.maps.Marker({
     			position: center,
     			map: map,
     			title: city[i][0]
   			});
-		 }
-        // Define a specfic location!
 
-        // var city = {lat: 32.507975, lng: 44.388925}
-        
-        // Create a map object, and include the MapTypeId to add
-        // to the map type control.
-    
-    
+      // Marker Event Listener
+        google.maps.event.addListener(marker,'click', function(marker) {
+        console.log("CLLLLLLICK CLICK CLICKCKCKCKCCK")
+        $('#myModal').modal('show');
+
+  });
+        }
+
 
         //Associate the styled map with the MapTypeId and set it to display.
         map.mapTypes.set('styled_map', styledMapType);
         map.setMapTypeId('styled_map');
-    }
+}
       
     </script>
+
+
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS']%>&callback=initMap">
     </script>
