@@ -1,20 +1,22 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-        position: absolute;
-        top: 3%;
-        left: 10%;
-        height: 70%;
-        width: 70%;
+
+
+#map {
+ position: relative;
+ top: 7%;
+ left: 14%;
+ height: 70%;
+ width: 70%;
       }
       /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+html, body {
+ height: 100%;
+ width: 100%;
+ margin: 0;
+ padding: 0;
       }
-
+/* Map Modal Styles*/
 .row {
   position: absolute;;
   left: 5%;
@@ -29,7 +31,7 @@
 .modal {
   color: #fff;
   position: absolute;
-  left: 15%;
+  left: 12%;
   top: 5%;
   background: #d6d7dc5e;
   height:550px;
@@ -39,4 +41,44 @@
 .modal-header{
   background-color: #ffffffb8;
   color: #646773;
+}
+
+
+/* Individual Artifacts Page*/
+
+.wrapper{
+  display: grid;
+  width:95%;
+  grid-template-columns: 50% 50%;
+  margin-left:2%;
+  margin-top: 3%;
+}
+
+
+.wrapper > div{
+  padding: 1em;
+}
+
+.card.artifact-info{
+  height: 30rem;
+  width: 90%;
+}
+
+.card{
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.tile{
+  position: static;
+}
+.left-info{
+
+}
+.right-info{
+  margin-left: -3%;
+
+}
+
+.era-link{
+  float:right;
 }

@@ -1,12 +1,21 @@
 class ArtifactsController < ApplicationController
 
+	respond_to :js, :json, :html
+
 	def index
-		@artifact = Artifact.all
-		@arti = Artifact.where(params[:location])
+		@artifacts = Artifact.all
+		@arti = Artifact.pluck(:location)
+		@city = params[:city_title]
+		puts "88888888888888888"
+		puts @city
+		puts "77777777777777777"
+		puts @arti
+		puts "55555555555555555"
 	end
 
 	def  show
 	@artifact = Artifact.find(params[:id])	
+	@related = Artifact.limit(4).order("RANDOM()")
 	end
 
 	def new

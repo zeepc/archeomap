@@ -1,0 +1,27 @@
+<!--   <div class="container"> -->
+    <div class="wrapper">
+  <div class="left-info">
+  <div class="card artifact-info">
+        <img class="card-img-left" src="<%= @artifact.pic_lg_url%>" alt="Card image cap">
+      <div class="card-body">
+         <strong class="d-inline-block mb-2 text-primary">Region: <%= @artifact.location %></strong>
+         <br>
+         <strong class="d-inline-block mb-2 text-primary"><a  target="blank" href="<%= @artifact.timeline_url%>"><%= @artifact.era %></a></strong>
+          <h5 class="mb-0">
+          <a class="text-dark"  target="blank" href="https://www.metmuseum.org/art/collection/search/<%= @artifact.objectID%>"><%= @artifact.title%>.</a>
+          </h5>
+      </div>
+      </div>
+    </div>
+      
+      <div class="right-info">
+        <ul class="list-group list-group-flush">
+           <li class="list-group-item"><h5>Related Artifacts</h5></li>
+          <% @related.each do |rel|%>
+          <li class="list-group-item"><a href="/artifacts/<%= rel.id %>"><img class="tile" src="<%= rel.pic_sm_url%>" alt="Card image cap"></a>
+            <a href="<%= rel.timeline_url%>" target="blank"><span class="era-link"><%= rel.era%></span></a></li>   
+        <% end %>
+        </ul>     
+      </div>
+  </div>
+<!-- </div> -->

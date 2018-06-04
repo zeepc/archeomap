@@ -1,9 +1,9 @@
 
     <div id="map"></div>
-
+<% if @city == @arti %>
   <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-header">
-      <h4 class="modal-title text-uppercase text-center"></h4>
+      <h4 class="modal-title text-uppercase text-center"><%= @city %></h4>
      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
      <span aria-hidden="true">&times;</span>
      </button>
@@ -11,15 +11,38 @@
 <div class="modal-body">
   <div class="container-fluid">
     <div class="row">
-      <% Artifact.all.each do |art| %>
-      <div class="artifact">
-        <a href="/artifacts"><img class="img-artifact" style="width: 18rem; height: 15.5rem;" src="<%= art.pic_lg_url %>" alt="Card image cap"></a>
-   </div>
-   <% end %>
+      <% @arti.each do |art| %>
+        <div class="artifact">
+          <a href="/artifacts/<%= art.id %>"><img class="img-artifact" style="width: 18rem; height: 15.5rem;" src="<%= art.pic_lg_url %>" alt="Card image cap"></a>
+        </div>
+      <% end %>
   </div>
 </div>
 </div>
 </div>
+<%else%>
+
+  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-header">
+      <h4 class="modal-title text-uppercase text-center"><%= @city %></h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+     </button>
+  </div>
+<div class="modal-body">
+  <div class="container-fluid">
+    <div class="row">
+      <% @artifacts.each do |art| %>
+        <div class="artifact">
+          <a href="/artifacts/<%= art.id %>"><img class="img-artifact" style="width: 18rem; height: 15.5rem;" src="<%= art.pic_lg_url %>" alt="Card image cap"></a>
+        </div>
+      <% end %>
+  </div>
+</div>
+</div>
+</div>
+
+<% end %>
     <script>
       function initMap() {
 
@@ -141,11 +164,13 @@
 
   // Create variable that will contain all of the data from my DB table Artifacts. This is to be passes to a modal.
       var cityData = [
-      <% Artifact.all.each do |art| %>
+      <% @artifacts.each do |art| %>
         ['<%= art.location %>','<%= art.pic_sm_url %>'],
       <% end %>
       ]
       console.log(cityData)
+      // console.log(cityData[1][1])
+
 
   //Variable for Marker locations
      var city = [
@@ -162,6 +187,7 @@
         ];
 
         console.log("IAM IN CITTTTTTTTTTTTTYYYYYYYYYYYYYYYYY")
+
 
         // Render map centered on middle east.
       	var map = new google.maps.Map(document.getElementById('map'), {
@@ -181,12 +207,21 @@
     			map: map,
     			title: city[i][0]
   			});
+    // Create a variable to hold the titles of all markers
+        var city_title = marker.title
+
+    // Send city array data to controller via Ajax call
+          $.ajax({data: { city: city_title},
+            dataType: "json",
+            type: 'get',
+            url: "/artifacts",
+          });
 
       // Marker event listener
         google.maps.event.addListener(marker,'click', function(marker) {
-        console.log("CLLLLLLICK CLICK CLICKCKCKCKCCK")
+        console.log(this.title)
+        // $('#myModal').addClass(this.title);
         $('#myModal').modal('show');
-
   });
         }
 
