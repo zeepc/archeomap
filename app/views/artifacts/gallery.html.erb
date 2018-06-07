@@ -1,0 +1,7 @@
+<div class="row" id="gallery-row">
+	<div class="gallery">
+	 <% @artifacts.each do |art| %>
+		<a href="/artifacts/<%= art.id %>"><img class="gallery-img" src="<%= art.pic_lg_url %>"></a>
+	<% end %>
+	</div>
+</div>

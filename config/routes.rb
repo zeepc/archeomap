@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+  root 'artifacts#home'
 
-  root 'artifacts#index'
+  get "/artifacts/gallery", to: "artifacts#gallery"
+  get "/artifacts/home", to: "artifacts#home"
+  post "/artifacts/map", to: "artifacts#index"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :artifacts
 end

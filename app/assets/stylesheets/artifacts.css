@@ -5,9 +5,9 @@
 #map {
  position: relative;
  top: 7%;
- left: 14%;
- height: 70%;
- width: 70%;
+ left: 10%;
+ height: 80%;
+ width: 80%;
       }
       /* Optional: Makes the sample page fill the window. */
 html, body {
@@ -81,4 +81,27 @@ html, body {
 
 .era-link{
   float:right;
+}
+
+/* Gallery */
+
+.gallery{
+  /*display: grid;
+  grid-template-columns: 32% 32% 32%;*/
+  position: relative;
+  top: 5%;
+  left: 14%;
+  width: 85%;
+
+}
+
+.gallery-img{
+  height:20rem;
+  width: 18rem;
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+
+#gallery-row{
+  margin-top: 5%;
 }
