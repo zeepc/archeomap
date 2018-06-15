@@ -1,3 +1,3 @@
-class Artifact < ActiveRecord::Base
+class Artifact < ApplicationRecord
 
 end

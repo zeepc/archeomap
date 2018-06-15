@@ -3,10 +3,8 @@ class ArtifactsController < ApplicationController
 	respond_to :js, :json, :html
 
 	
-
 	def home
-		@artifacts = Artifact.all
-		
+		@artifacts = Artifact.all	
 	end
 
 
@@ -19,11 +17,13 @@ class ArtifactsController < ApplicationController
 		@artifacts = Artifact.all
 		@city = params[:city]
 		@arti = Artifact.where(location: @city)
-		puts "88888888888888888"
-		puts @city
-		puts "77777777777777777"
-		puts @arti
-		puts "55555555555555555"
+		# puts "88888888888888888"
+		# puts @city
+		# puts "22222222222222222"
+		# puts @artifacts.id
+		# puts "77777777777777777"
+		# puts @arti
+		# puts "55555555555555555"
 
 	end
 
