@@ -17,14 +17,16 @@ class ArtifactsController < ApplicationController
 		@artifacts = Artifact.all
 		@city = params[:city]
 		@arti = Artifact.where(location: @city)
+		
 		# puts "88888888888888888"
 		# puts @city
 		# puts "22222222222222222"
-		# puts @artifacts.id
-		# puts "77777777777777777"
-		# puts @arti
-		# puts "55555555555555555"
-
+		#  @artifacts.each do |a|
+		# 	puts a.location
+		# end
+		puts "77777777777777777"
+		puts @arti
+		puts "55555555555555555"
 	end
 
 	def  show
