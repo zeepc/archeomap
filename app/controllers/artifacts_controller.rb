@@ -3,10 +3,8 @@ class ArtifactsController < ApplicationController
 	respond_to :js, :json, :html
 
 	
-
 	def home
-		@artifacts = Artifact.all
-		
+		@artifacts = Artifact.all	
 	end
 
 
@@ -17,18 +15,18 @@ class ArtifactsController < ApplicationController
 
 	def index
 		@artifacts = Artifact.all
-		@city = params[:city_name]
+		@city = params[:city]
 		@arti = Artifact.where(location: @city)
-		puts "88888888888888888"
-		puts @city
+		
+		# puts "88888888888888888"
+		# puts @city
+		# puts "22222222222222222"
+		#  @artifacts.each do |a|
+		# 	puts a.location
+		# end
 		puts "77777777777777777"
 		puts @arti
 		puts "55555555555555555"
-		
-		# 		@arti.each do |art|
-		# 		@region = art
-		# 	print @region
-		# end
 	end
 
 	def  show
@@ -63,11 +61,6 @@ class ArtifactsController < ApplicationController
     # with per-user checking of permissible attributes.
     def artifact_params
       params.require(:artifact).permit(:objectID, :title, :alt_title , :pic_sm_url, :pic_lg_url, :audio, :location, :era, :timeline_url)
-    end
-
-    def city_params
-    	params.require(:city).permit(:city)
-    	
     end
 end
 

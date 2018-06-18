@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get "/artifacts/gallery", to: "artifacts#gallery"
   get "/artifacts/home", to: "artifacts#home"
-  post "/artifacts/map", to: "artifacts#index"
+  post "/artifacts", to: "artifacts#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :artifacts
