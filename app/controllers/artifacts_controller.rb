@@ -5,6 +5,9 @@ class ArtifactsController < ApplicationController
 	
 	def home
 		@artifacts = Artifact.all	
+		@baby = Artifact.where('location = ?' , 'Babylon')
+		@city = params[:city]
+		@arti = Artifact.where('location = ?' , @city)
 	end
 
 
@@ -14,19 +17,21 @@ class ArtifactsController < ApplicationController
 
 
 	def index
+	  # @art = Artifacts.where(location: "Babylon")
 		@artifacts = Artifact.all
 		@city = params[:city]
-		@arti = Artifact.where(location: @city)
-		
+		@arti = Artifact.where('location = ?' , @city)
+		@baby = Artifact.where('location = ?' , 'Babylon')
 		# puts "88888888888888888"
 		# puts @city
 		# puts "22222222222222222"
-		#  @artifacts.each do |a|
+		#  @arti.each do |a|
 		# 	puts a.location
+		# 	puts a.title
 		# end
 		puts "77777777777777777"
-		puts @arti
-		puts "55555555555555555"
+		# puts @arti
+		# puts "55555555555555555"
 	end
 
 	def  show

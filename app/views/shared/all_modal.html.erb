@@ -1,0 +1,7 @@
+<% @artifacts.each do |art|%>
+  <div class="artifact">
+    <a href="/artifacts/<%= art.id %>">
+     <img class="img-artifact" style="width: 18rem; height: 15.5rem;" src="<%= art.pic_lg_url %>" alt="Card image cap"></a>
+   </div>
+<% end %>
+
