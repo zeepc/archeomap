@@ -2,7 +2,7 @@
 
 Many people love going to museums and learning more about the places and the cultures where some of the most world famous artifacts have been found. 
 
-Unfortunatly, many people are not familiar with the geography of the ancient world. To provide a better experience to vistors of the Metropolitan Museum of Art's Ancient Near East galleries, ArcheoMap shows the locations of those ancient cities, and the artifacts associated with those places.
+Unfortunately, many people are not familiar with the geography of the ancient world. To provide a better experience to vistors of the Metropolitan Museum of Art's Ancient Near East galleries, ArcheoMap shows the locations of those ancient cities, and the artifacts associated with those places.
 
 **This project is still in development.**
 
