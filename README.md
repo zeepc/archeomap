@@ -22,7 +22,7 @@ Unfortunatly, many people are not familiar with the geography of the ancient wor
 
 ## Acknowledgments
 
-* *The Metropolitam Museum of Art* - [metmuseum](https://github.com/travisp)
+* *The Metropolitam Museum of Art* - [metmuseum](https://github.com/open-access-met)
   For allowing me access to their private API. 
 
 * *Google Maps API* - [GMAPS](https://developers.google.com/maps/documentation/javascript/tutorial)
