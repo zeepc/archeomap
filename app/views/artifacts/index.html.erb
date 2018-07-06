@@ -153,7 +153,6 @@
   			  });
           let city_name = marker.title
 
-
       // Marker event listener
         google.maps.event.addListener(marker,'click', function() {
         console.log(this.title)
@@ -166,7 +165,7 @@
             url: "/artifacts",
           }).done(function(data){
 
-        console.log('this came back, this is data',data)
+        // console.log('this came back, this is data',data)
 
         let cityModal = `
           <div class="modal" id="${city_title}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -179,7 +178,7 @@
           <div class="modal-body">
           <div class="container-fluid">
           <div class="row">`;
-
+          //render images by location on click.
             data.forEach(function(art){
           cityModal+=`<div class="artifact">
             <a href="/artifacts/${art.id}">
@@ -198,8 +197,7 @@
         // $('#myModal').addClass(this.title);
         $(`[id='${city_title}']`).modal('show');
 
-          });
-
+       });
    });
         } //<----- closes For Loop for Markers
 

@@ -10,11 +10,9 @@ class ArtifactsController < ApplicationController
 		@arti = Artifact.where('location = ?' , @city)
 	end
 
-
 	def gallery
 		@artifacts = Artifact.all
 	end
-
 
 	def index
 		@artifacts = Artifact.all
@@ -27,7 +25,6 @@ class ArtifactsController < ApplicationController
 		@arti = Artifact.where('location = ?' , @city)
 		render json: @arti
 	end
-
 
 	def  show
 	@artifact = Artifact.find(params[:id])	
