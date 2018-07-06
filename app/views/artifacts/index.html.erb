@@ -153,7 +153,6 @@
   			  });
           let city_name = marker.title
 
-
       // Marker event listener
         google.maps.event.addListener(marker,'click', function() {
         console.log(this.title)
@@ -198,8 +197,7 @@
         // $('#myModal').addClass(this.title);
         $(`[id='${city_title}']`).modal('show');
 
-          });
-
+       });
    });
         } //<----- closes For Loop for Markers
 
