@@ -21,18 +21,14 @@ class ArtifactsController < ApplicationController
 		@artifacts = Artifact.all
 		@city = params[:city]
 		@arti = Artifact.where('location = ?' , @city)
-		@baby = Artifact.where('location = ?' , 'Babylon')
-		# puts "88888888888888888"
-		# puts @city
-		# puts "22222222222222222"
-		#  @arti.each do |a|
-		# 	puts a.location
-		# 	puts a.title
-		# end
-		puts "77777777777777777"
-		# puts @arti
-		# puts "55555555555555555"
 	end
+
+	def modal
+		@city = params[:city]
+		@arti = Artifact.where('location = ?' , @city)
+		render json: @arti
+	end
+
 
 	def  show
 	@artifact = Artifact.find(params[:id])	
