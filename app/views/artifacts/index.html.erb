@@ -125,7 +125,7 @@
         	['Tell Brak', 36.667222, 41.058333],
         	['Nineveh', 36.2296, 42.2362],
         	['Nimrud', 36.0928, 43.3232],
-        	['Arlsan Tash', 36.850, 38.400],
+        	['Arslan Tash', 36.850, 38.400],
         	['Sippar', 33.0588, 44.2522],
         	['Umma', 31.6333, 45.8667],
         	['Tell ed-Duweir',31.5652,34.8485],
@@ -153,17 +153,13 @@
   			  });
           let city_name = marker.title
 
-    // Create a variable to hold the titles of all markers
-        // let city_title = marker.title
-        // console.log("999999" + marker.title)
-
-    // Send city array data to controller via Ajax call
 
       // Marker event listener
         google.maps.event.addListener(marker,'click', function() {
         console.log(this.title)
      let city_title = this.title
 
+     // Send city array data to controller via Ajax call
     $.ajax({data: { city: city_title},
             dataType: "json",
             type: 'post',
