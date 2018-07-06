@@ -17,7 +17,6 @@ class ArtifactsController < ApplicationController
 
 
 	def index
-	  # @art = Artifacts.where(location: "Babylon")
 		@artifacts = Artifact.all
 		@city = params[:city]
 		@arti = Artifact.where('location = ?' , @city)
