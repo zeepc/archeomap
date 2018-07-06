@@ -153,7 +153,6 @@
   			  });
           let city_name = marker.title
 
-
     // Create a variable to hold the titles of all markers
         // let city_title = marker.title
         // console.log("999999" + marker.title)
@@ -169,8 +168,9 @@
             dataType: "json",
             type: 'post',
             url: "/artifacts",
-          });
+          }).done(function(data){
 
+        console.log('this came back, this is data',data)
 
         let cityModal = `
           <div class="modal" id="${city_title}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -182,25 +182,31 @@
           </div>
           <div class="modal-body">
           <div class="container-fluid">
-          <div class="row">
-            <% @baby.each do |art|%>
-          <div class="artifact">
-            <a href="/artifacts/<%= art.id %>">
-          <img class="img-artifact" style="width: 18rem; height: 15.5rem;" src="<%= art.pic_lg_url %>" alt="Card image cap"></a>
-            </div>
-          <% end %>
+          <div class="row">`;
 
+            data.forEach(function(art){
+          cityModal+=`<div class="artifact">
+            <a href="/artifacts/${art.id}">
+          <img class="img-artifact" style="width: 18rem; height: 15.5rem;" src="${art.pic_lg_url}" alt="Card image cap"></a>
+            </div>`
+          });
+            cityModal+=`
           </div>
         </div>
       </div>
-    </div>`
+    </div>`;
+
     // Create modal on click depending on city
           $('body').append(cityModal);
 
         // $('#myModal').addClass(this.title);
         $(`[id='${city_title}']`).modal('show');
+
+          });
+
    });
         } //<----- closes For Loop for Markers
+
         //Associate the styled map with the MapTypeId and set it to display.
         map.mapTypes.set('styled_map', styledMapType);
         map.setMapTypeId('styled_map');
