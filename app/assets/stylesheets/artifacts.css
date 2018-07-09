@@ -2,10 +2,10 @@
        * element that contains the map. */
 #map {
  position: relative;
- top: 7%;
- left: 10%;
- height: 80%;
- width: 80%;
+ top: 10%;
+ left: 18%;
+ height: 65%;
+ width: 65%;
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
       /* Optional: Makes the sample page fill the window. */
@@ -30,11 +30,11 @@ html, body {
 .modal {
   color: #fff;
   position: absolute;
-  left: 12%;
-  top: 5%;
+  left: 18%;
+  top: 17%;
   background: #d6d7dc5e;
-  height:550px;
-  width: 990px;
+  height:350px;
+  width: 790px;
 }
 
 .modal-header{
@@ -42,7 +42,11 @@ html, body {
   color: #646773;
 }
 
-
+/*.img-artifact{
+  height: 60px;
+  width: 40px;
+}
+*/
 /* Individual Artifacts Page*/
 
 .wrapper{
