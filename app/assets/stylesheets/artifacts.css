@@ -14,7 +14,22 @@ html, body {
  width: 100%;
  margin: 0;
  padding: 0;
+ background-color: #b1948a;
       }
+/* Navigation Bar */
+.bg-light {
+    background-color: #a21c08cf!important;
+}
+.navbar-light .navbar-brand {
+  color: rgba(252, 246, 246, 0.9);
+  text-shadow: 2px 2px 2px #353434cf;
+  font-size: 25px;
+  /*font-family: 'Spinnaker', sans-serif;*/
+  font-family: 'Reem Kufi', sans-serif;
+ /* font-family: 'Poller One', cursive;
+  font-family: 'Nova Round', cursive;
+  font-family: 'Roboto', sans-serif;*/
+}
 /* Map Modal Styles*/
 .row {
   position: absolute;;
