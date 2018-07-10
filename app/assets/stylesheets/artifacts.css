@@ -27,7 +27,7 @@ html, body {
   margin-left: 1%;
 }
 
-.modal {
+.popmodal {
   color: #fff;
   position: absolute;
   left: 18%;
@@ -112,4 +112,19 @@ html, body {
 #gallery-row{
   margin-left: -9%;
   margin-top: 5%;
+}
+
+/* Admin Styles */
+.admin-home{
+  margin-top: 3%;
+  height: 12rem;
+}
+
+#carousel-item, .carousel-inner, .carousel, .carousel img {
+  width: 25rem;
+  height: 21rem;
+}
+
+.lead {
+  display: inline-block;
 }

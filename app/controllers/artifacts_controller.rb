@@ -1,13 +1,18 @@
 class ArtifactsController < ApplicationController
 
 	respond_to :js, :json, :html
-
 	
 	def home
 		@artifacts = Artifact.all	
 		@baby = Artifact.where('location = ?' , 'Babylon')
 		@city = params[:city]
 		@arti = Artifact.where('location = ?' , @city)
+	end
+
+	def admin
+		@admin = current_user
+		@artifacts = Artifact.all
+		@rand = Artifact.first
 	end
 
 	def gallery
