@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -25,9 +26,14 @@
       <li class="nav-item">
         <a class="nav-link" href="/artifacts">Map</a>
       </li>
+      <% if user_signed_in? %>
       <li class="nav-item">
-        <a class="nav-link" href="/artifacts">Admin</a>
+        <a class="nav-link" href="/artifacts/admin">Home</a>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
       </li>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
     </ul>
 <!--     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search">
