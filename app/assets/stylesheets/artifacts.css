@@ -2,7 +2,7 @@
        * element that contains the map. */
 #map {
  position: relative;
- top: 10%;
+ top: 12%;
  left: 18%;
  height: 65%;
  width: 65%;
@@ -17,6 +17,12 @@ html, body {
  background-color: #b1948a;
       }
 /* Navigation Bar */
+a {
+  color: #e8eaec;
+  text-decoration: none;
+  background-color: transparent;
+  }
+
 .bg-light {
     background-color: #a21c08cf!important;
 }
@@ -30,6 +36,11 @@ html, body {
   font-family: 'Nova Round', cursive;
   font-family: 'Roboto', sans-serif;*/
 }
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: rgb(255, 251, 251);
+}
+
 /* Map Modal Styles*/
 .row {
   position: absolute;;
@@ -53,8 +64,9 @@ html, body {
 }
 
 .modal-header{
-  background-color: #ffffffb8;
-  color: #646773;
+  background-color: #d6d7dc5e;
+  text-shadow: 2px 2px 2px #353434cf;
+  color: #eeecec;
 }
 
 .modal-open {
@@ -93,9 +105,7 @@ html, body {
 .tile{
   position: static;
 }
-.left-info{
 
-}
 .right-info{
   margin-left: -3%;
 
@@ -143,3 +153,58 @@ html, body {
 .lead {
   display: inline-block;
 }
+
+/* ITEM INFO PAGE */
+
+.list-group-flush .list-group-item {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    background-color: #b1948a;
+}
+
+.card.artifact-info {
+    height: 30rem;
+    width: 90%;
+    background-color: #b1948a;
+}
+
+.text-primary {
+    color: #ebeef2!important;
+  }
+
+.arti-list {
+    color: #ebeef2!important;
+    text-shadow: 2px 2px 2px #353434cf;
+  }
+
+.audio{
+  position: absolute;
+  top: 117%;
+  left: 20%;
+}
+/* Landing Page*/
+
+.home-text{
+  position:absolute;
+  top: 35%;
+  left: 4%;
+  font-size: 25px;
+  color: white;
+  text-shadow: 2px 2px 2px #353434cf;
+  display:block;
+  background: transparent;
+  text-align: center;
+  width: 40%;
+  z-index: 1;
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+
+.home-img{
+  position:absolute;
+  opacity: 0.9;
+  width: 100%;
+  height: 100vh;
+}
+

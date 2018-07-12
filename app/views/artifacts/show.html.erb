@@ -10,16 +10,21 @@
           <h5 class="mb-0">
           <a class="text-dark"  target="blank" href="https://www.metmuseum.org/art/collection/search/<%= @artifact.objectID%>"><%= @artifact.title%>.</a>
           </h5>
+    <% if @artifact.audio? %>
+      <audio controls class="audio">
+        <source src="<%= @artifact.audio %>" type="audio/mpeg">
+        Your browser does not support the audio element.</audio>
+    <% end%> 
       </div>
       </div>
     </div>
       
       <div class="right-info">
         <ul class="list-group list-group-flush">
-           <li class="list-group-item"><h5>Related Artifacts</h5></li>
+           <li class="list-group-item"><h5 class="arti-list">Artifacts</h5></li>
           <% @related.each do |rel|%>
           <li class="list-group-item"><a href="/artifacts/<%= rel.id %>"><img class="tile" src="<%= rel.pic_sm_url%>" alt="Card image cap"></a>
-            <a href="<%= rel.timeline_url%>" target="blank"><span class="era-link"><%= rel.era%></span></a></li>   
+            <a href="<%= rel.timeline_url%>" target="blank"><span class="era-link"><%= rel.era%></span></a></li>  
         <% end %>
         </ul>     
       </div>

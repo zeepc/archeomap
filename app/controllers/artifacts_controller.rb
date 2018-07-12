@@ -3,7 +3,8 @@ class ArtifactsController < ApplicationController
 	respond_to :js, :json, :html
 	
 	def home
-		@artifacts = Artifact.all	
+		@artifacts = Artifact.all
+		@rand = Artifact.find_by(id: 21)
 		@baby = Artifact.where('location = ?' , 'Babylon')
 		@city = params[:city]
 		@arti = Artifact.where('location = ?' , @city)
