@@ -178,10 +178,10 @@ a {
     text-shadow: 2px 2px 2px #353434cf;
   }
 
-.audio{
-  position: absolute;
-  top: 117%;
-  left: 20%;
+.audio{ 
+  margin-top: 5%;
+  margin-left: 15%;
+ 
 }
 /* Landing Page*/
 
