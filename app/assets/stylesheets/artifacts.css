@@ -2,12 +2,25 @@
        * element that contains the map. */
 #map {
  position: relative;
- top: 12%;
- left: 18%;
- height: 65%;
+ top: 3%;
+ left: 17%;
+ height: 60%;
  width: 65%;
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
+.map-text{
+  margin-top: 5%;
+  margin-left: 13%;
+  font-family: 'Anton', sans-serif;
+  font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px 2px #353434cf;
+  display:block;
+  background: transparent;
+  text-align: center;
+  width: 75%;
+  z-index: 1;
+}
       /* Optional: Makes the sample page fill the window. */
 html, body {
  height: 100%;
@@ -21,7 +34,12 @@ a {
   color: #e8eaec;
   text-decoration: none;
   background-color: transparent;
+  text-decoration: none;
   }
+a:hover, a:active {
+    color: white;
+    text-decoration: none;
+}
 
 .bg-light {
     background-color: #a21c08cf!important;
@@ -30,11 +48,7 @@ a {
   color: rgba(252, 246, 246, 0.9);
   text-shadow: 2px 2px 2px #353434cf;
   font-size: 25px;
-  /*font-family: 'Spinnaker', sans-serif;*/
   font-family: 'Reem Kufi', sans-serif;
- /* font-family: 'Poller One', cursive;
-  font-family: 'Nova Round', cursive;
-  font-family: 'Roboto', sans-serif;*/
 }
 
 .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
@@ -56,8 +70,8 @@ a {
 .popmodal {
   color: #fff;
   position: absolute;
-  left: 18%;
-  top: 17%;
+  left: 19%;
+  top: 32%;
   background: #d6d7dc5e;
   height:350px;
   width: 790px;
@@ -65,9 +79,10 @@ a {
 
 .modal-header{
   background-color: #d6d7dc5e;
-  text-shadow: 2px 2px 2px #353434cf;
-  color: #eeecec;
+  text-shadow: 2px 2px 2px #353434fc;
+  color: #f6f2f2;
 }
+
 
 .modal-open {
   overflow: hidden;
@@ -157,26 +172,26 @@ a {
 /* ITEM INFO PAGE */
 
 .list-group-flush .list-group-item {
-    border-right: 0;
-    border-left: 0;
-    border-radius: 0;
-    background-color: #b1948a;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+  background-color: #b1948a;
 }
 
 .card.artifact-info {
-    height: 30rem;
-    width: 90%;
-    background-color: #b1948a;
+  height: 30rem;
+  width: 90%;
+  background-color: #b1948a;
 }
 
 .text-primary {
-    color: #ebeef2!important;
-  }
+  color: #ebeef2!important;
+}
 
 .arti-list {
-    color: #ebeef2!important;
-    text-shadow: 2px 2px 2px #353434cf;
-  }
+  color: #ebeef2!important;
+  text-shadow: 2px 2px 2px #353434cf;
+}
 
 .audio{ 
   margin-top: 5%;
@@ -187,20 +202,25 @@ a {
  
 }
 /* Landing Page*/
+h1 {
+  font-size: 50px;
+  text-transform: uppercase;
+}
 
 .home-text{
   position:absolute;
   top: 35%;
-  left: 4%;
-  font-size: 25px;
+  left: 12%;
+  font-family: 'Anton', sans-serif;
+  font-size: 40px;
   color: white;
-  text-shadow: 2px 2px 2px #353434cf;
+  text-shadow: 2px 2px 2px #353434;
   display:block;
   background: transparent;
   text-align: center;
-  width: 40%;
+  width: 75%;
   z-index: 1;
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-delay: 1s;
 }
 
@@ -209,5 +229,35 @@ a {
   opacity: 0.9;
   width: 100%;
   height: 100vh;
+}
+
+.enter-map{
+ color: rgb(161, 52, 25);
+}
+
+/*MEDIA QUERIES*/
+
+/* mobile  */
+@media only screen and (max-device-width: 750px) {
+    .popmodal{
+      position: absolute;
+      left: 17%;
+      top: 22%;
+      background: #d6d7dc5e;
+      height:350px;
+      width: 650px
+    }
+}
+
+/* ipad */
+@media only screen and (max-device-width: 1030px) {
+    .popmodal{
+      position: absolute;
+      left: 17%;
+      top: 22%;
+      background: #d6d7dc5e;
+      height:350px;
+      width: 650px
+    }
 }
 
