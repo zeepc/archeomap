@@ -16,9 +16,13 @@ To provide a better experience to vistors of the Metropolitan Museum of Art's An
 ![Artifact](/app/assets/images/artifactdev.png?raw=true)*Gallery*    
 
 ![Gallery](/app/assets/images/gallerydev.png?raw=true)*Gallery* -->
+
+[Video](https://www.youtube.com/watch?v=ZQiLDKMGQ9k)
+
 <a  target="_blank" href="https://www.youtube.com/watch?v=ZQiLDKMGQ9k">
   <img style="width: 30%; height: auto;" src='/app/assets/images/archeomaphome.png'>
 <a>
+
 
 
 ## Upcoming Features
