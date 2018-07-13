@@ -7,15 +7,23 @@ To provide a better experience to vistors of the Metropolitan Museum of Art's An
 
 **This project is still in development.**
 
-## Development Views
-
+## Demo
+<!-- 
 ![Map](/app/assets/images/mapdev.png?raw=true)*Map*  
 
 ![Modal](/app/assets/images/modaldev.png?raw=true)*Modal*
 
 ![Artifact](/app/assets/images/artifactdev.png?raw=true)*Gallery*    
 
-![Gallery](/app/assets/images/gallerydev.png?raw=true)*Gallery*  
+![Gallery](/app/assets/images/gallerydev.png?raw=true)*Gallery* -->
+<figure class="video_container">
+  <iframe src="https://www.youtube.com/watch?v=ZQiLDKMGQ9k&feature=youtu.be" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+
+## Upcoming Features
+* User log-in.
+* Choose your favorites. 
+* Upload pictures to from your visit to the museum.
 
 ## Author
 
